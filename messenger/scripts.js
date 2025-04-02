@@ -1,0 +1,1 @@
+Array.prototype.nonIgnoreLength=0,Array.prototype.pushWithIgnoring=function(n){n.isIgnoring||(this.nonIgnoreLength+=1),this.push(n)};

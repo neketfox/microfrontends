@@ -1,0 +1,43 @@
+/*Colors*/
+// $whitesmoke: whitesmoke;
+// $white: white;
+// $blue: blue;
+// $violet: blueviolet;
+
+$light-blue: #138FAA;
+$alice-blue: aliceblue;
+$dark-blue: #1B1E23;
+$gray: #555C66;
+$ligth-gray: #EDEDED;
+$white: #FDFDFD;
+$black: #0A0A0A;
+$green: #37A864;
+
+$maxContainerHeight: calc(100vh - 56px); // TODO: For microfrontend
+
+/*Mixins*/
+@mixin commonShadow {
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width:  $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}

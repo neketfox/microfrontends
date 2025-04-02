@@ -1,0 +1,22 @@
+$teams-color: #4f42b5;
+$telegram-color: #2AABEE;
+$instagram-color: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+
+@mixin integrationInstagramBorder {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background: $instagram-color border-box;
+    mask:
+       linear-gradient(#fff 0 0) content-box,
+       linear-gradient(#fff 0 0);
+    mask-composite: xor;
+            mask-composite: exclude;
+    margin: -1px;
+  }
+}
